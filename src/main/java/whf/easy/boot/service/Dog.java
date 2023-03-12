@@ -1,10 +1,12 @@
 package whf.easy.boot.service;
 
-import lombok.Data;
+import com.google.common.collect.Lists;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import reactor.tuple.Tuple;
+import reactor.tuple.Tuple3;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @ClassName Dog
@@ -13,8 +15,8 @@ import java.util.Map;
  * @Date 2022/12/10 下午8:53
  * @Version 1.0
  */
-@Data
-public class Dog {
+@Service
+public class Dog extends AbractAnimal {
 
     private String name;
 
@@ -26,14 +28,19 @@ public class Dog {
 
     private List<Person> maps;
 
+    @Override
+    String printIntel() {
+        return "dog";
+    }
 
     public static void main(String[] args) {
-        Map<String,Boolean> map = new HashMap<>();
-        map.put("1234",true);
-        Boolean s = map.get("1234");
-        if (s != null && s){
-            System.out.println("进来啦");
-        }
+        List<String> sgs = Lists.newArrayList("a","b","c","d");
+        List<Integer> its = Lists.newArrayList(1,2,3,4);
+        List<Double> dbs = Lists.newArrayList(1.0,2.0,3.0,4.0);
+        Tuple3<List<String>, List<Integer>, List<Double>> tuple3 = Tuple.of(sgs, its, dbs);
+        System.out.println(tuple3.getT1());
+        System.out.println(tuple3.getT2());
+        System.out.println(tuple3.getT3());
     }
 
 }

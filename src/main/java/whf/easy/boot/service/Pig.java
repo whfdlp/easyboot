@@ -14,7 +14,7 @@ import java.util.function.Predicate;
  * @Version 1.0
  */
 @Service
-public class Pig implements Animal{
+public class Pig {
     private static List<Integer> integers = new ArrayList<Integer>();
     private static String MULTI_VALUE_ATTRIBUTE_DELIMITERS =",; ";
     public static void main(String[] args) {
@@ -31,8 +31,8 @@ public class Pig implements Animal{
         }
     }
 
-    @Override
-    public Animal getInstance() {
-        return new Pig();
+   // @Override
+    String printIntel() {
+        return "pig";
     }
 }

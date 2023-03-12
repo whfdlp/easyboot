@@ -1,6 +1,11 @@
 package whf.easy.boot.service;
 
+import com.google.common.collect.Lists;
+import lombok.Data;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName Dog
@@ -10,35 +15,26 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  */
 @Service
-public class Cat implements Animal{
-    @Override
-    public Animal getInstance() {
-        return new Cat();
-    }
+@Data
+public class Cat  {
 
+    private  String desc;
+
+   // @Override
+    String printIntel() {
+        return "cat";
+    }
 
     public static void main(String[] args) {
-        int rows = 11; //180000
-        int columns = 3;
-        String sql = "insert into student values (";
-        for (int r = 1; r <= rows; r++) {//1,2,3,4,5,6...11;
-            for (int c = 0; c <columns; c++) {//1,2,3
-                sql += c + ",";
-                if (c == 2){
-                   sql =  sql.substring(0,sql.lastIndexOf(","));
-                   sql +=  "),(";
-                }
-            }
-            if (r%5==0){
-                sql = sql.substring(0,sql.lastIndexOf(",("));
-                System.out.println("执行sql"+sql);
-                sql = "";
-            }
-        }
-        if (sql.length() > 1){
-            sql = sql.substring(0,sql.lastIndexOf(",("));
-            System.out.println("执行sql"+sql);
-        }
+        Cat cat = new Cat();
+        cat.setDesc("1");
+        Cat cat1 = new Cat();
+        cat1.setDesc("1");
+        List<Cat> cats = Lists.newArrayList(cat,cat1);
+        Cat cat3 = new Cat();
+        cat3.setDesc(cats.stream().map(x -> x.getDesc()).collect(Collectors.joining(",")));
 
+        System.out.println(cat3);
     }
+
 }
