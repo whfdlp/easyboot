@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+state end3    <<end>>
+state end4    <<end>>
+[*] -> 审批中
+
+
+state 审批中 {
+state end1    <<end>>
+
+  [*] -> 审批人A
+  审批人A -> 审批人B : 审批通过/转交
+  审批人B -left-> 审批人A :收回审批
+  end1 -left> 审批人B : 收回审批
+  审批人B -> end1 : 结束审批
+  --
+  state end2    <<end>>
+  [*] -> 财务审核
+  财务审核 -> end2 : 审核
+  end2 -> 财务审核 : 收回审核
+}
+
+审批中 -> 已完成
+已完成 -> end3
+
+@enduml

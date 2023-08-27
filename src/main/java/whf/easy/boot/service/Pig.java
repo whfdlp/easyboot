@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.function.Consumer;
 
 /**
  * @ClassName Dog
@@ -22,12 +23,16 @@ public class Pig {
        integers.add(2);
        integers.add(3);
        integers.add(4);
-       con(list -> list.contains(1));
+       Integer i = 1;
+       con(list -> {
+           list.remove(i);
+           System.out.println(list);
+       } ,list -> list.contains(i));
     }
 
-    public static void con(Predicate<List<Integer>> condition){
+    public static void con(Consumer<List<Integer>> consumer,Predicate<List<Integer>> condition){
         if (condition.test(integers)){
-            System.out.println("存在");
+            consumer.accept(integers);
         }
     }
 

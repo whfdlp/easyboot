@@ -15,14 +15,20 @@ import java.util.stream.Collectors;
  * @Version 1.0
  */
 @Service
-@Data
-public class Cat  {
+public class Cat implements Animal{
+    private String desc;
 
-    private  String desc;
+    public String getDesc() {
+        return desc;
+    }
 
-   // @Override
-    String printIntel() {
-        return "cat";
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    @Override
+    public Animal getInstance() {
+        return new Cat();
     }
 
     public static void main(String[] args) {

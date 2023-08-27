@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor 审批人
+participant 审批人 order 10
+participant 云费控 order 20
+participant 发票中台 order 40
+participant 账户中心 order 50
+审批人 -> 云费控:审批驳回
+云费控 -> 云费控:保存单据操作日志
+云费控 -> 云费控:保存审批人单据审批历史
+云费控 -> 云费控:重置借款单还款中金额、未还款金额
+group 单据是否包含发票 [<color #Red>不包含</color>]
+云费控 -> 云费控:更新单据状态为已驳回
+else <color #Red>包含发票</color>
+云费控 -> 云费控:重置本地发票状态为未报销
+云费控 -> 发票中台:同步发票中台发票状态
+云费控 -> 云费控:更新单据状态为已驳回
+云费控 -> 云费控:存在微信分享则将分享标记置为无效
+end
+云费控 -> 账户中心:发送微信公众号消息给提单人
+云费控 --> 审批人: 驳回成功
+
+
+
+
+@endumlA

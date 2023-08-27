@@ -5,6 +5,9 @@ import com.google.common.collect.HashBasedTable;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -22,7 +25,7 @@ import java.util.Map;
 @Getter
 @Setter
 @ToString
-public class Person {
+public class Person implements ApplicationContextAware {
     public String name;
     public Integer age;
 
@@ -42,5 +45,10 @@ public class Person {
         Collection<Integer> values = table.values();
         System.out.println(CollectionUtils.isEmpty(values));
         System.out.println(values);
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+
     }
 }

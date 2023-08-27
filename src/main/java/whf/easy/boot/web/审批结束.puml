@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor 审批人
+participant 审批人 order 10
+participant 云费控 order 20
+participant 商务授权 order 30
+participant 发票中台 order 40
+participant 账户中心 order 50
+审批人 -> 云费控:结束审批
+alt 单据状态为已完成 <color #Red>reimStatus = 40</color>
+alt
+云费控 -> 商务授权:查询剩余报销人数额度
+商务授权 -[#Red]->x 云费控:额度不足
+云费控 --> 审批人:提示购买额度
+end
+云费控 -> 云费控:借款核销
+group 是否包含发票 [包含发票]
+ 云费控 -> 发票中台: 同步发票为已报销状态
+ 发票中台 --> 云费控:success
+ 云费控 -> 云费控:设置为当前申请人的推荐审批人
+云费控 -> 云费控:更新单据状态为<color #Red>审批完成</color>
+云费控 -> 云费控:修改本地发票为已报销
+note OVER 云费控
+ <color #Red>异步调用修改</color>
+end note
+云费控 -> 云费控:修改本地发票为已报销
+ else 不包含发票
+云费控 -> 云费控:设置为当前申请人的推荐审批人
+云费控 -> 云费控:保存单据操作日志
+云费控 -> 云费控:保存审批人单据审批历史
+云费控 -> 云费控:更新单据状态为<color #Red>审批完成</color>
+ end
+ 云费控 -> 商务授权:扣除报销人数额度
+  云费控 -> 账户中心:发送微信公众号消息给提单人
+else 单据状态为审批结束<color #Red>reimStatus = 30</color>
+云费控 -> 云费控:设置为当前申请人的推荐审批人
+云费控 -> 云费控:保存单据操作日志
+云费控 -> 云费控:保存审批人单据审批历史
+云费控 -> 云费控:更新单据状态为<color #Red>审批结束</color>
+note OVER 云费控
+ <color #Red>异步调用修改</color>
+end note
+end
+云费控 --> 审批人: 审批成功
+
+
+
+@endumlA

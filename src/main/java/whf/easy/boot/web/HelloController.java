@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import whf.easy.boot.common.CompontService;
+import whf.easy.boot.service.DubboConsumerDemo;
 
 import java.util.Map;
 
@@ -18,8 +20,12 @@ import java.util.Map;
  * @Version 1.0
  */
 @Controller
+@ResponseBody
 @RequestMapping("/hello")
 public class HelloController {
+
+    @Autowired
+    private DubboConsumerDemo dubboConsumerDemo;
 
     @Autowired
     private CompontService compontService;
@@ -46,11 +52,9 @@ public class HelloController {
 //        return modelAndView;
 //    }
 //
-//    @GetMapping("/hello2")
-//    public ModelAndView hello2(){
-//        System.out.println("HelloController.hello1");
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.addObject("name","whf");
-//        return modelAndView;
-//    }
+    @GetMapping("/sayHello")
+    public String sayHello(){
+        String s = dubboConsumerDemo.sayHello();
+        return s;
+    }
 }
