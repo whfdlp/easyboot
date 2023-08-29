@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor 财务
+participant 财务 order 10
+participant 云费控 order 20
+participant 发票中台 order 40
+participant 商务中台 order 50
+participant 账户中心 order 60
+财务 -> 云费控:财务驳回
+云费控 -> 云费控:校验
+note over 云费控
+  <color #Red>单据不存在、单据状态不是审批中或审批结束</color>
+  <color #Red>财务审核状态不是财务未审核</color>
+end note
+alt
+云费控 -[#Red]->x 财务:单据已被报销
+云费控 -> 商务中台:查询剩余报销人数额度
+商务中台 -[#Red]->x 云费控:额度不足
+云费控 --> 财务:提示购买额度
+end
+云费控 -> 云费控:保存单据操作日志
+group 单据是否包含发票 [<color #Red>不包含</color>]
+云费控 -> 云费控:更新单据状态为已驳回
+else <color #Red>包含发票</color>
+云费控 -> 云费控:重置本地发票状态为未报销
+云费控 -> 发票中台:同步发票中台发票状态
+发票中台 -> 发票中台:扣除发票额度
+发票中台 --> 云费控:success
+云费控 -> 云费控:更新单据状态为已驳回
+end
+云费控 -> 商务中台:扣除报销人员额度
+云费控 -> 云费控:重置借款单还款中金额、未还款金额
+云费控 -> 账户中心:发送微信公众号消息给提单人
+云费控 --> 财务: 驳回成功
+
+
+
+
+@endumlA
