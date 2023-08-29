@@ -36,8 +36,4 @@ public class Pig {
         }
     }
 
-   // @Override
-    String printIntel() {
-        return "pig";
-    }
 }

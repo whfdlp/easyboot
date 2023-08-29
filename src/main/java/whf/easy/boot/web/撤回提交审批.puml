@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor 提单人
+participant 提单人 order 10
+participant 云费控 order 20
+participant 发票中台 order 40
+participant 账户中心 order 50
+提单人 -> 云费控:撤回提交审批
+
+云费控 -> 云费控:查询单据是否已被人处理
+云费控 -[#Red]->x 提单人:单据已被处理，不能撤回
+云费控 -> 云费控:添加单据操作记录
+云费控 -> 云费控:删除借款核销明细、删除与项目关联关系
+group 是否包含发票 [包含发票]
+ 云费控 -> 发票中台: 同步发票中台解绑发票
+ 发票中台 --> 云费控:success
+ 云费控 -> 云费控:如果是微信分享，修改状态为已撤回
+云费控 -> 云费控:更新单据状态为<color #Red>草稿</color>
+云费控 -> 云费控:修改本地发票为未报销
+note OVER 云费控
+ <color #Red>异步调用修改</color>
+end note
+ else 不包含发票
+ 云费控 -> 云费控:如果是微信分享，修改状态为已撤回
+云费控 -> 云费控:更新单据状态为<color #Red>草稿</color>
+end
+  云费控 -> 账户中心:发送微信公众号消息给审批人单据已撤回
+云费控 --> 提单人: 撤回提交审批成功
+
+
+
+@endumlA

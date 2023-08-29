@@ -1,5 +1,9 @@
 package whf.easy.boot.service.test;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 import java.math.BigDecimal;
 
 /**
