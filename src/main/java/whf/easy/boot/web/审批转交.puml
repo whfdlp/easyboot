@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor 审批人
+participant 审批人 order 10
+participant 云费控 order 20
+participant 账户中心 order 50
+审批人 -> 云费控:审批通过
+
+云费控 -> 云费控:校验
+note over 云费控
+  <color #Red>单据不存在、单据已被处理、包含不同企业的单据</color>
+  <color #Red>单据状态不是审批中、转交人不能是提单人</color>
+end note
+云费控 -[#Red]->x 审批人:单据已被处理或不存在
+云费控 -> 云费控:单据审批人变更
+云费控 -> 云费控:添加单据操作日志
+云费控 -> 云费控:保存审批人单据审批历史
+
+云费控 -> 账户中心:发送微信公众号消息给下个审批人
+云费控 --> 审批人: 转交成功
+
+
+
+@endumlA

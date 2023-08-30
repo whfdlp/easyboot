@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor 财务
+participant 财务 order 10
+participant 云费控 order 20
+participant 商务授权 order 30
+participant 发票中台 order 40
+participant 账户中心 order 50
+财务 -> 云费控:结束审批
+云费控 -> 云费控:校验
+note over 云费控
+  <color #Red>单据不存在、单据状态为草稿或驳回</color>
+end note
+云费控 -[#Red]->x 财务:单据已处理或不存在，不能财务结束审批
+云费控 -> 云费控:修改费用明细、支付方式
+云费控 -> 云费控:添加单据操作日志
+云费控 -> 云费控:借款核销
+云费控 -> 云费控:更新单据状态为<color #Red>审批完成</color>
+alt
+云费控 -> 商务授权:查询剩余报销人数额度
+商务授权 -[#Red]->x 云费控:额度不足
+云费控 --> 财务:提示购买额度
+end
+
+alt  单据包含发票
+ 云费控 -> 发票中台: 同步发票为已报销状态
+ 发票中台 -> 发票中台: 扣除发票报销额度
+ 发票中台 --> 云费控:success
+云费控 -> 云费控:修改本地发票为已报销
+note OVER 云费控
+ <color #Red>异步调用修改</color>
+end note
+云费控 -> 云费控:修改本地发票快照为已报销
+end
+ 云费控 -> 商务授权:扣除报销人数额度
+  云费控 -> 账户中心:发送微信公众号消息给提单人
+云费控 --> 财务: 结束审批成功
+
+
+
+@endumlA
