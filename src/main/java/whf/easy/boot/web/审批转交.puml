@@ -6,7 +6,7 @@ actor 审批人
 participant 审批人 order 10
 participant 云费控 order 20
 participant 账户中心 order 50
-审批人 -> 云费控:审批通过
+审批人 -> 云费控:转交审批人
 
 云费控 -> 云费控:校验
 note over 云费控
