@@ -2,6 +2,7 @@ package whf.easy.boot.service;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
+import whf.easy.boot.conf.MyFactoryBean;
 
 /**
  * @ClassName SpringBeanFactoryDemo
@@ -19,7 +20,7 @@ public class SpringBeanFactoryDemo {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-application.xml");
-        Dog dog = context.getBean("dog",Dog.class);
-        System.out.println(dog);
+        Object myFactoryBean = context.getBean("myFactoryBean");
+        System.out.println(myFactoryBean);
     }
 }

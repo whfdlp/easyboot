@@ -2,21 +2,11 @@ package whf.easy.boot.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import whf.easy.boot.service.AbractAnimal;
-import whf.easy.boot.service.Animal;
+import org.springframework.web.bind.annotation.*;
+import whf.easy.boot.conf.MyFactoryBean;
 import whf.easy.boot.service.SpringBeanFactoryDemo;
 import whf.easy.boot.web.vo.NihaoVO;
-
-import java.util.Map;
 
 /**
  * @ClassName HelloController
@@ -30,13 +20,6 @@ import java.util.Map;
 @RequestMapping("/helloWorld")
 public class HelloWorldController {
 
-//    @Qualifier("cat")
-//    @Autowired
-//    private AbractAnimal catAnimal;
-//
-//    @Qualifier("dog")
-    @Autowired
-    private AbractAnimal dogAnimal;
 
 @Autowired
 private SpringBeanFactoryDemo springBeanFactoryDemo;
@@ -45,6 +28,9 @@ private SpringBeanFactoryDemo springBeanFactoryDemo;
     public String hi(){
        return "hi";
     }
+
+    @Autowired
+    private MyFactoryBean factoryBean;
 
     @GetMapping("/hello")
     @ResponseBody
