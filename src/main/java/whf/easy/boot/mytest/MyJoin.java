@@ -7,6 +7,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.joda.time.format.DateTimeFormat;
 
 import org.joda.time.LocalDate;
+import reactor.tuple.Tuple2;
+
 import java.text.DateFormat;
 
 import java.text.ParseException;
@@ -61,7 +63,9 @@ public class MyJoin {
 //        System.out.println(ints);
 
         try {
-            System.out.println(LocalDate.parse("2023052314:07:33", DateTimeFormat.forPattern("yyyyMMdd HH:mm:ss")).toString("yyyy-MM-dd"));
+            Tuple2<Object, Object> of = Tuple2.of(null, null);
+            System.out.println(of.getT1());
+            //System.out.println(LocalDate.parse("2023052314:07:33", DateTimeFormat.forPattern("yyyyMMdd HH:mm:ss")).toString("yyyy-MM-dd"));
         }catch (IllegalArgumentException e){
             System.out.println("出错啦");
         }
