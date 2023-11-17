@@ -2,7 +2,7 @@ package whf.easy.boot.conf;
 
 import org.springframework.beans.factory.SmartFactoryBean;
 import org.springframework.stereotype.Component;
-import whf.easy.boot.service.Dog;
+import whf.easy.boot.service.strategy.Dog;
 
 @Component
 public class MyFactoryBean implements SmartFactoryBean {

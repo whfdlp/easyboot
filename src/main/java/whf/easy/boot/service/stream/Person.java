@@ -1,4 +1,4 @@
-package whf.easy.boot.service;
+package whf.easy.boot.service.stream;
 
 
 import com.google.common.collect.HashBasedTable;

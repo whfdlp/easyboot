@@ -3,6 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="person" class="whf.easy.boot.service.Person" />
+    <bean id="person" class="whf.easy.boot.service.stream.Person" />
     <bean id="myFactoryBean" class="whf.easy.boot.conf.MyFactoryBean" />
 </beans>

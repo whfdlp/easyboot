@@ -1,4 +1,4 @@
-package whf.easy.boot.service;
+package whf.easy.boot.service.dubbo;
 
 import org.springframework.stereotype.Service;
 

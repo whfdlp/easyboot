@@ -1,4 +1,4 @@
-package whf.easy.boot.service;
+package whf.easy.boot.service.strategy;
 
 import org.springframework.util.StringUtils;
 

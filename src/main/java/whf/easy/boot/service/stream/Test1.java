@@ -1,4 +1,4 @@
-package whf.easy.boot.service.test;
+package whf.easy.boot.service.stream;
 
 /**
  * @ClassName Test1

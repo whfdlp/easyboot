@@ -1,6 +1,7 @@
-package whf.easy.boot.service;
+package whf.easy.boot.service.strategy;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import whf.easy.boot.service.SpringBeanFactoryDemo;
 
 /**
  * @ClassName AbractAnimal

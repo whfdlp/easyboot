@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import whf.easy.boot.common.CompontService;
 import whf.easy.boot.model.DemoData;
-import whf.easy.boot.service.DemoDataListener;
-import whf.easy.boot.service.DubboConsumerDemo;
+import whf.easy.boot.service.excel.DemoDataListener;
+import whf.easy.boot.service.dubbo.DubboConsumerDemo;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * @ClassName HelloController
@@ -62,19 +61,29 @@ public class HelloController {
     @PostMapping("excel")
     @ResponseBody
     public String excel(MultipartFile file, @RequestParam("dataRowNumber") int dataRowNumber) throws IOException {
-        EasyExcel.read(file.getInputStream(), new DemoDataListener(dataRowNumber-1,"123")).sheet().headRowNumber(dataRowNumber-1).doRead();
+        EasyExcel.read(file.getInputStream(), DemoData.class, new DemoDataListener(dataRowNumber-1,"123")).sheet().headRowNumber(dataRowNumber-1).doRead();
         return "success";
     }
 
 
     public static void main(String[] args) {
-        List<List<Integer>> ints = Lists.newArrayList();
-        List<Integer> integers = Lists.newArrayList(1, 2, 3, 4, 5);
-        List<Integer> integers1 = Lists.newArrayList(1, 2, 3, 4, 5);
-        ints.add(integers);
-        ints.add(integers1);
-        int count = ints.stream().filter(Objects::nonNull)
-                .mapToInt(List::size).sum();
-        System.out.println(count);
+//        List<List<Integer>> ints = Lists.newArrayList();
+//        List<Integer> integers = Lists.newArrayList(1, 2, 3, 4, 5);
+//        List<Integer> integers1 = Lists.newArrayList(1, 2, 3, 4, 5);
+//        ints.add(integers);
+//        ints.add(integers1);
+//        int count = ints.stream().filter(Objects::nonNull)
+//                .mapToInt(List::size).sum();
+//        System.out.println(count);
+        ArrayList<Integer> objects = Lists.newArrayList();
+        objects.add(1);
+        objects.add(2);
+        objects.add(3);
+        objects.add(4);
+        objects.add(5);
+        objects.add(6);
+        for (Integer object : objects) {
+            System.out.println(object);
+        }
     }
 }

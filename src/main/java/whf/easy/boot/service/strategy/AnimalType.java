@@ -1,4 +1,4 @@
-package whf.easy.boot.service;
+package whf.easy.boot.service.strategy;
 
 public enum AnimalType {
     Cat,Dog,Pig;

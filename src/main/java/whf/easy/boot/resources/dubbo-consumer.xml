@@ -15,5 +15,5 @@
 
     <dubbo:consumer registry="zk"/>
     &lt;!&ndash;指定要消费的服务&ndash;&gt;
-    <dubbo:reference id="dubboInterfaceDemo" check="false" interface="whf.easy.boot.service.DubboInterfaceDemo" registry="zk"/>
+    <dubbo:reference id="dubboInterfaceDemo" check="false" interface="whf.easy.boot.service.dubbo.DubboInterfaceDemo" registry="zk"/>
 </beans>-->

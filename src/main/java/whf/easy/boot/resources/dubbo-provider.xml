@@ -21,6 +21,6 @@
     <dubbo:provider registry="zk1"  protocol="mydubbo" />
 
     &lt;!&ndash; 声明需要暴露的服务接口 &ndash;&gt;
-    <dubbo:service interface="whf.easy.boot.service.DubboInterfaceDemo" ref="dubboInterfaceDemoImpl" />
+    <dubbo:service interface="whf.easy.boot.service.dubbo.DubboInterfaceDemo" ref="dubboInterfaceDemoImpl" />
 
 </beans>-->
