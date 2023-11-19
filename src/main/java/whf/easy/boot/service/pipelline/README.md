@@ -1,4 +1,6 @@
-![img.png](img%2Fimg.png)
+![](img/img.png)
+
+当你的数据流需要经过很多同等逻辑处理时，可以考虑使用此套路，便于后续扩展
 
 管道(Pipeline)----用于串联阀门的管道通路
 
@@ -8,4 +10,4 @@
 
 网络层的扛把子netty框架中，例如ChannelPipeline、ChannelHandler、ChannelHandlerContext，分别用于处理tcp拆包、加解码等等之类。
 
-![img_1.png](img%2Fimg_1.png)
+![](img/img_1.png)

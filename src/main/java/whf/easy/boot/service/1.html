@@ -1,0 +1,2354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="baidu-site-verification" content="mj0dYN1Hbj"/>
+    <title>杭州市公共资源交易平台</title>
+    <meta name="SiteName" content="杭州市公共资源交易平台"/>
+    <meta name="SiteDomain" content="http://hzctc.hangzhou.gov.cn"/>
+    <meta name="SiteIDCode" content="3301000141"/>
+    <meta name="keywords" content="杭州,交易平台,杭州市公共资源交易平台,交易中心,电子招投标"/>
+    <meta name="description"
+          content="杭州市公共资源交易平台成立于2005年3月，成建制进驻了市建设工程招标办、市政府采购办、市绿化管理站3个行业监管部门及市建设工程交易中心、市政府采购中心、市土地交易中心、市产权交易中心4个专业交易机构，对外集中开展各项交易业务，并实行统一发布信息、统一工作流程、统一收费、统一着装、统一考核的“五统一”管理，公共资源交易活动基本实现了集中、统一、规范。市政府专门成立市公共资源交易管委会办公室，承担统一平台的整体建设、资源整合、现场监管等职能，并与市行政审批服务管理办公室合署办公，实现了投资项目审批与公共资源交易的无缝衔接和“一条龙”服务，成为杭州市委、市政府服务企业和投资者的“第一窗口”。"/>
+    <script src="/Js/jquery-3.6.0.min.js"></script>
+    <script src="/Js/General.js"></script>
+    <link href="/Css/main/CustomStyle/reset.css" rel="stylesheet"/>
+    <link href="/Css/main/CustomStyle/Index.css?v=1.3" rel="stylesheet"/>
+    <meta name="ColumnName" content="交易信息"/>
+    <meta name="ColumnType" content="交易信息"/>
+    <meta name="ArticleTitle" content="这是一条测试数据-ZJL"/>
+    <meta name="PubDate" content="2023-11-18"/>
+    <meta name="ContentSource" content="杭州市公共资源交易平台"/>
+    <meta name="Keywords" content="这是一条测试数据-ZJL"/>
+    <meta name="Author" content=""/>
+    <meta name="Description" content="这是一条测试数据-ZJL"/>
+    <meta name="Image" content=""/>
+    <meta name="Url"
+          content="https://ggzy.hzctc.hangzhou.gov.cn/AfficheShow/Home?AfficheID=a09302b1-bf65-46e7-9512-82ce7df1f490&amp;IsInner=0&amp;IsHistory=0&amp;ModuleID=22"/>
+    <link href="/Css/main/CustomStyle/NewsShow.css" rel="stylesheet"/>
+    <!--IE8下手动引入弹层插件样式文件-->
+    <link rel="stylesheet" type="text/css" href="/Js/layer/skin/layer.css"/>
+    <script type="text/javascript" src="/Js/jyLayer.js"></script>
+    <script type="text/javascript">
+        var mytime;
+        $(function () {
+            //var xhr = null;
+            //if (window.XMLHttpRequest) {
+            //    xhr = new window.XMLHttpRequest();
+            //} else {
+            //    xhr = new ActiveObject("Microsoft")
+            //}
+
+            //xhr.open("GET", "/", false)
+            //xhr.send(null);
+            //var date = xhr.getResponseHeader("Date");
+            var m = "2023/11/18 21:17:39";
+            mytime = Date.parse(m.replace(/-/g, "/"));
+
+            showTime();
+            footlink("1");
+            footlink("2");
+            footlink("3");
+            footlink("4");
+            footlink("5");
+        })
+
+        function showTime() {
+            var time = new Date(mytime);
+            //debugger;
+            var year = time.getFullYear();
+            var month = time.getMonth() + 1;
+            var date = time.getDate();
+            var day = time.getDay();
+            var hour = time.getHours();
+            var minutes = time.getMinutes();
+            var second = time.getSeconds();
+            month < 10 ? month = '0' + month : month;
+
+            hour < 10 ? hour = '0' + hour : hour;
+            minutes < 10 ? minutes = '0' + minutes : minutes;
+            second < 10 ? second = '0' + second : second;
+            var now_time = year + '年' + month + '月' + date + '日' + ' ' + show_day(day) + ' ' + hour + ':' + minutes + ':' + second;
+            $("#Time").html(now_time);
+            mytime += 1000;
+            setTimeout("showTime();", 1000);
+
+        }
+
+        function Search() {
+            var title = $("#inputText").val();
+            var url = $("#FirstFloorMenu").val()
+            window.open(url + "&searchText=" + title);
+        }
+
+        function s_click(obj) {
+            var num = 0;
+            for (var i = 0; i < obj.options.length; i++) {
+                if (obj.options[i].selected == true) {
+                    num++;
+                }
+            }
+            if (num == 1) {
+                var url = obj.options[obj.selectedIndex].value;
+                if (url != "0") {
+                    window.open(url);
+                }
+            }
+        }
+
+        function show_day(i) {
+            var date = "";
+            switch (i) {
+                case 0:
+                    date = "星期日";
+                    break;
+                case 1:
+                    date = "星期一";
+                    break;
+                case 2:
+                    date = "星期二";
+                    break;
+                case 3:
+                    date = "星期三";
+                    break;
+                case 4:
+                    date = "星期四";
+                    break;
+                case 5:
+                    date = "星期五";
+                    break;
+                case 6:
+                    date = "星期六";
+                    break;
+                default:
+                    break;
+            }
+            return date;
+        }
+
+        function footlink(type) {
+            $.post("/Index/FootLink?Type=" + type, function (data) {
+                //debugger;
+                if (data.Code == "1") {
+                    var list = "";
+                    if (type == "1") {
+                        list += "<option value=\"0\">国家部委导航</option>";
+                    } else if (type == "2") {
+                        list += "<option value=\"0\">市政府各部门网站导航</option>";
+                    } else if (type == "3") {
+                        list += "<option value=\"0\">各省市交易网导航</option>";
+                    } else if (type == "4") {
+                        list += "<option value=\"0\">省内交易网导航</option>";
+                    } else if (type == "5") {
+                        list += "<option value=\"0\">常用网址导航</option>";
+                    }
+                    $(data.rows).each(function () {
+                        list += "<option value='" + this.Link + "'>" + this.Name + "</option>";
+                    })
+                    $("#footlink" + type).html(list);
+                } else {
+                    alert(data.error);
+                }
+            })
+        }
+    </script>
+    <script>
+        (function () {
+
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                } else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            }
+        )();
+    </script>
+</head>
+<body>
+<div class="banner">
+    <div class="banner_img">
+        <img src="/Css/images/hzggzy_banner.jpg" width="100%" height="100%"/>
+    </div>
+    <div class="top">
+        <div class="comWidth">
+            <a href="https://hzctc.hangzhou.gov.cn/" style="font-size:16px;color:white; " target="_blank">
+                <span style="display:block;float:left;margin-top:6px;margin-left:0px">返回杭州市公共资源交易网</span>
+            </a>
+            <div class="Standard_time fr">
+                当前时间：<span id="Time"></span>
+            </div>
+        </div>
+    </div>
+    <div class="comWidth head_main">
+        <div class="logo fl">
+            <img src="/Css/images/banner_bgs.png" width="600" height="25"/>
+            <img src="/Css/images/hzggzy_logo.png" width="630" height="85"/>
+        </div>
+        <div class="menu-item" style="display:none">
+            <div class="menu-link"></div>
+            <div class="finalbanner"></div>
+            <ul class="child-list">
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=72" class="child-link">市本级</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=76" class="child-link">上城</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=77" class="child-link">下城</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=79" class="child-link">江干</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=80" class="child-link">拱墅</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=78" class="child-link">西湖</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=73" class="child-link">滨江</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=83" class="child-link">萧山</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=84" class="child-link">余杭</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=88" class="child-link">桐庐</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=89" class="child-link">淳安</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=86" class="child-link">建德</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=85" class="child-link">富阳</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=87" class="child-link">临安</a>
+                </li>
+                <li class="child-item">
+                    <a href="/Area/Home?areaID=6295" class="child-link">钱塘</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search fr">
+            <div class="search_select fl">
+                <select class="selectBox" id="FirstFloorMenu" name="FirstFloorMenu">
+                    <option value="/SecondPage/SecondPage?ModuleID=67&amp;ViewID=17">交易信息</option>
+                    <option value="/MainBody/MainBody?ModuleID=324&amp;ViewID=325">主体资信</option>
+                    <option value="/ExposureTable/Index?ModuleID=306&amp;ViewID=383">曝光台</option>
+                    <option value="/DownLoad/DownLoad?ModuleID=130&amp;ViewID=108">下载专区</option>
+                </select>
+            </div>
+            <div class="search_input fl">
+                <input type="text" class="input" value="" id="inputText" placeholder="请输入你要查找的内容..."/>
+                <input type="button" class="submit" value="查询" onclick="Search()"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <div>
+        <ul class="nav">
+            <li>
+                <a href='/Index/Home' target='_self'>首页</a>
+            </li>
+            <li>
+                <a href='/SecondPage/SecondPage?ModuleID=67&ViewID=17' target='_self'>交易信息</a>
+                <ul>
+                    <li>
+                        <a href='/SecondPage/SecondPage?ModuleID=67&ViewID=17' target='_self'>工程建设</a>
+                    </li>
+                    <li>
+                        <a href='/SecondPage/SecondPage?ModuleID=67&ViewID=18' target='_self'>政府采购</a>
+                    </li>
+                    <li>
+                        <a href='/SecondPage/SecondPage?ModuleID=67&ViewID=19' target='_self'>土地矿业</a>
+                    </li>
+                    <li>
+                        <a href='/SecondPage/SecondPage?ModuleID=67&ViewID=20' target='_self'>产权交易</a>
+                    </li>
+                    <li>
+                        <a href='/SecondPage/SecondPage?ModuleID=67&ViewID=21' target='_self'>综合其他</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='/MainBody/MainBody?ModuleID=324&ViewID=325' target='_self'>主体资信</a>
+                <ul>
+                    <li>
+                        <a href='/MainBody/MainBody?ModuleID=324&ViewID=325' target='_self'>法人信息</a>
+                    </li>
+                    <li>
+                        <a href='/MainBody/MainBody?ModuleID=324&ViewID=500' target='_self'>公示企业</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href='/NewsPage/NewsWorkPage?ModuleID=517' target='_self'>业务公告</a>
+            </li>
+            <li>
+                <a href='/ExposureTable/Index?ModuleID=306&ViewID=383' target='_self'>曝光台</a>
+            </li>
+            <li>
+                <a href='/StatisticalRepore/StatisticalRepore?ModuleID=382' target='_self'>统计数据</a>
+            </li>
+            <li>
+                <a href='/DownLoad/DownLoad?ModuleID=130&ViewID=108' target='_self'>下载专区</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="MainTitle">
+                <span class="spanTitle">
+                    <a href="/Index/Home" target="_self">首页</a>
+                    > <a href="/SecondPage/SecondPage?ModuleID=67&ViewID=17" target="_self">交易信息</a>
+                    > <a href="/SecondPage/SecondPage?ModuleID=17&ViewID=22" target="_self">工程建设</a>
+                    > <a href="/SecondPage/SecondPage?ModuleID=17&ViewID=22" target="_self">招标公告</a>
+                </span>
+    </div>
+    <div class="MainList" style="min-height:600px;height:auto;">
+        <div class="AfficheTitle">
+            这是一条测试数据-ZJL
+            <br>2023-11-18
+
+        </div>
+        <div style="text-align: justify;padding: 8px 15px 10px 13px;">
+            <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"
+                  xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40">
+            <head>
+                <meta http-equiv=Content-Type content="text/html; charset=gb2312">
+                <meta name=ProgId content=Word.Document>
+                <meta name=Generator content="Microsoft Word 14">
+                <meta name=Originator content="Microsoft Word 14">
+                <link rel=File-List href="133447595104146096.html.files/filelist.xml">
+                <title>项目编号</title>
+                <!--[if gte mso 9]>
+                <xml>
+                    <o:DocumentProperties>
+                        <o:Author>廖爽</o:Author>
+                        <o:LastAuthor>玖久。</o:LastAuthor>
+                        <o:Revision>1</o:Revision>
+                        <o:Pages>1</o:Pages>
+                        <o:Characters>1113</o:Characters>
+                        <o:Lines>9</o:Lines>
+                        <o:Paragraphs>2</o:Paragraphs>
+                        <o:Company>Chinese ORG</o:Company>
+                    </o:DocumentProperties>
+                    <o:CustomDocumentProperties>
+                        <o:KSOProductBuildVer dt:dt="string">2052-12.1.0.15712</o:KSOProductBuildVer>
+                        <o:ICV dt:dt="string">941770478A1C42819CD338E04A9AF5A9_13</o:ICV>
+                    </o:CustomDocumentProperties>
+                </xml><![endif]-->
+                <!--[if gte mso 9]>
+                <xml>
+                    <o:OfficeDocumentSettings></o:OfficeDocumentSettings>
+                </xml><![endif]-->
+                <!--[if gte mso 9]>
+                <xml>
+                    <w:WordDocument>
+                        <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+                        <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+                        <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+                        <w:DocumentKind>DocumentNotSpecified</w:DocumentKind>
+                        <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+                        <w:PunctuationKerning></w:PunctuationKerning>
+                        <w:View>Print</w:View>
+                        <w:Compatibility>
+                            <w:AdjustLineHeightInTable/>
+                            <w:DontGrowAutofit/>
+                            <w:BalanceSingleByteDoubleByteWidth/>
+                            <w:DoNotExpandShiftReturn/>
+                            <w:UseFELayout/>
+                        </w:Compatibility>
+                        <w:Zoom>0</w:Zoom>
+                    </w:WordDocument>
+                </xml><![endif]-->
+                <!--[if gte mso 9]>
+                <xml>
+                    <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true" DefSemiHidden="true"
+                                    DefQFormat="false" DefPriority="99" LatentStyleCount="260">
+                        <w:LsdException Locked="false" Priority="0" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="Normal"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="heading 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="0" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="heading 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 7"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 8"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="9" SemiHidden="false" QFormat="true"
+                                        Name="heading 9"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 7"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 8"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="index 9"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 7"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 8"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="39" SemiHidden="false" Name="toc 9"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Normal Indent"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="footnote text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="annotation text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="0" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="header"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="0" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="footer"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="index heading"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="35" SemiHidden="false" QFormat="true"
+                                        Name="caption"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="table of figures"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="envelope address"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="envelope return"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="footnote reference"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="annotation reference"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="line number"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="page number"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="endnote reference"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="endnote text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="table of authorities"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="macro"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="toa heading"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="List"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Bullet"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Number"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="List 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="List 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="List 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="List 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Bullet 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Bullet 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Bullet 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Bullet 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Number 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Number 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Number 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Number 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="10" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="Title"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="Closing"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Signature"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="0" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Default Paragraph Font"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text Indent"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Continue"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Continue 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Continue 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Continue 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Continue 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Message Header"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="11" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="Subtitle"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Salutation"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="Date"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text First Indent"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text First Indent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Note Heading"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text Indent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Body Text Indent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Block Text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Hyperlink"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="FollowedHyperlink"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="22" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="Strong"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="20" SemiHidden="false" UnhideWhenUsed="false"
+                                        QFormat="true" Name="Emphasis"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Document Map"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Plain Text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="E-mail Signature"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Normal (Web)"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Acronym"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Address"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Cite"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Code"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Definition"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Keyboard"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Preformatted"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Sample"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Typewriter"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="HTML Variable"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Normal Table"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="annotation subject"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="No List"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="1 / a / i"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="1 / 1.1 / 1.1.1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Article / Section"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Simple 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Simple 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Simple 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Classic 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Classic 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Classic 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Classic 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Colorful 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Colorful 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Colorful 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Columns 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Columns 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Columns 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Columns 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Columns 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 7"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Grid 8"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 7"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table List 8"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table 3D effects 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table 3D effects 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table 3D effects 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Contemporary"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Elegant"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Professional"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Subtle 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Subtle 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Web 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Web 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Web 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Balloon Text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="59" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Table Grid"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Table Theme"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Placeholder Text"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="No Spacing"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="List Paragraph"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false" Name="Quote"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="99" SemiHidden="false"
+                                        Name="Intense Quote"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3 Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid Accent 1"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3 Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid Accent 2"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3 Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid Accent 3"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3 Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid Accent 4"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3 Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid Accent 5"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="60" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Shading Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="61" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light List Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="62" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Light Grid Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="63" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 1 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="64" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Shading 2 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="65" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 1 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="66" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium List 2 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="67" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 1 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="68" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 2 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="69" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Medium Grid 3 Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="70" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Dark List Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="71" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Shading Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="72" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful List Accent 6"></w:LsdException>
+                        <w:LsdException Locked="false" Priority="73" SemiHidden="false" UnhideWhenUsed="false"
+                                        Name="Colorful Grid Accent 6"></w:LsdException>
+                    </w:LatentStyles>
+                </xml><![endif]-->
+                <style>
+                    @font-face {
+                        font-family: "Times New Roman";
+                    }
+
+                    @font-face {
+                        font-family: "宋体";
+                    }
+
+                    @font-face {
+                        font-family: "Calibri";
+                    }
+
+                    @font-face {
+                        font-family: "Wingdings";
+                    }
+
+                    @font-face {
+                        font-family: "Cambria";
+                    }
+
+                    p.MsoNormal {
+                        mso-style-name: 正文;
+                        mso-style-parent: "";
+                        margin: 0pt;
+                        margin-bottom: .0001pt;
+                        mso-pagination: none;
+                        text-align: justify;
+                        text-justify: inter-ideograph;
+                        font-family: 'Times New Roman';
+                        font-size: 10.5000pt;
+                        mso-font-kerning: 1.0000pt;
+                    }
+
+                    h2 {
+                        mso-style-name: "标题 2";
+                        mso-style-next: 正文;
+                        margin-top: 13.0000pt;
+                        margin-bottom: 13.0000pt;
+                        mso-para-margin-top: 0.0000gd;
+                        mso-para-margin-bottom: 0.0000gd;
+                        page-break-after: avoid;
+                        mso-pagination: lines-together;
+                        text-align: justify;
+                        text-justify: inter-ideograph;
+                        mso-outline-level: 2;
+                        line-height: 173%;
+                        font-family: Cambria;
+                        font-weight: bold;
+                        font-size: 16.0000pt;
+                        mso-font-kerning: 1.0000pt;
+                    }
+
+                    span
+
+                    .10
+                    {
+                        font-family: 'Times New Roman'
+                    ;
+                    }
+
+                    span
+
+                    .15
+                    {
+                        font-family: Cambria
+                    ;
+                        mso-fareast-font-family: 宋体
+                    ;
+                        mso-bidi-font-family: 'Times New Roman'
+                    ;
+                        font-weight: bold
+                    ;
+                        font-size: 16.0000pt
+                    ;
+                        mso-font-kerning: 1.0000pt
+                    ;
+                    }
+
+                    span
+
+                    .16
+                    {
+                        font-family: 'Times New Roman'
+                    ;
+                        font-size: 9.0000pt
+                    ;
+                    }
+
+                    span
+
+                    .17
+                    {
+                        font-family: 'Times New Roman'
+                    ;
+                        font-size: 9.0000pt
+                    ;
+                    }
+
+                    span
+
+                    .18
+                    {
+                        font-family: 'Times New Roman'
+                    ;
+                    }
+
+                    p.MsoFooter {
+                        mso-style-name: 页脚;
+                        margin: 0pt;
+                        margin-bottom: .0001pt;
+                        layout-grid-mode: char;
+                        mso-pagination: none;
+                        text-align: left;
+                        font-family: 'Times New Roman';
+                        font-size: 9.0000pt;
+                    }
+
+                    p.MsoHeader {
+                        mso-style-name: 页眉;
+                        margin: 0pt;
+                        margin-bottom: .0001pt;
+                        border-bottom: 1.0000pt solid windowtext;
+                        mso-border-bottom-alt: 0.7500pt solid windowtext;
+                        padding: 0pt 0pt 1pt 0pt;
+                        layout-grid-mode: char;
+                        mso-pagination: none;
+                        text-align: center;
+                        font-family: 'Times New Roman';
+                        font-size: 9.0000pt;
+                    }
+
+                    span.msoIns {
+                        mso-style-type: export-only;
+                        mso-style-name: "";
+                        text-decoration: underline;
+                        text-underline: single;
+                        color: blue;
+                    }
+
+                    span.msoDel {
+                        mso-style-type: export-only;
+                        mso-style-name: "";
+                        text-decoration: line-through;
+                        color: red;
+                    }
+
+                    table.MsoNormalTable {
+                        mso-style-name: 普通表格;
+                        mso-style-parent: "";
+                        mso-style-noshow: yes;
+                        mso-tstyle-rowband-size: 0;
+                        mso-tstyle-colband-size: 0;
+                        mso-padding-alt: 0.0000pt 5.4000pt 0.0000pt 5.4000pt;
+                        mso-para-margin: 0pt;
+                        mso-para-margin-bottom: .0001pt;
+                        mso-pagination: widow-orphan;
+                        font-family: 'Times New Roman';
+                        font-size: 10.0000pt;
+                        mso-ansi-language: #0400;
+                        mso-fareast-language: #0400;
+                        mso-bidi-language: #0400;
+                    }
+
+                    @page {
+                        mso-page-border-surround-header: no;
+                        mso-page-border-surround-footer: no;
+                    }
+
+                    @page Section0 {
+                        margin-top: 72.0000pt;
+                        margin-bottom: 72.0000pt;
+                        margin-left: 90.0000pt;
+                        margin-right: 90.0000pt;
+                        size: 595.3000pt 841.9000pt;
+                        layout-grid: 15.6000pt;
+                        mso-header-margin: 42.5500pt;
+                        mso-footer-margin: 49.6000pt;
+                        mso-header: url("133447595104146096\.html.files/header.html") h0;
+                        mso-first-header: url("133447595104146096\.html.files/header.html") fh0;
+                    }
+
+                    div.Section0 {
+                        page: Section0;
+                    }
+                </style>
+            </head>
+            <body style="tab-interval:21pt;text-justify-trim:punctuation;">
+            <!--StartFragment-->
+            <div class="Section0" style="layout-grid:15.6000pt;">
+                <div align=center>
+                    <table class=MsoNormalTable border=1 cellspacing=0 style="border-collapse:collapse;width:100.0000%;mso-table-layout-alt:fixed;
+border:none;mso-border-left-alt:0.5000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);
+mso-border-right-alt:0.5000pt solid rgb(157,177,206);mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);mso-border-insideh:0.5000pt solid rgb(157,177,206);
+mso-border-insidev:0.5000pt solid rgb(157,177,206);mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;">
+                        <tr style="height:10.0000pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">工程名称</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=459 valign=top colspan=4 style="width:344.4000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">这是一条测试数据</font>
+                                                        <font face="宋体">-ZJL</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">建设单位</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=459 valign=top colspan=4 style="width:344.4000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">擎洲测试单位</font>
+                                                        <font face="宋体">01（测试）</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">项目编号</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=180 valign=top style="width:135.5000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">A3301010060CS5544001211</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=109 valign=top style="width:82.1500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">公告登记日期</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=168 valign=top style="width:126.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">2023年11月18日</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">开标时间</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=180 valign=top style="width:135.5000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">2023/11/18 14:00:00</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=109 valign=top style="width:82.1500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=168 valign=top style="width:126.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">报名地点</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=458 valign=top colspan=3 style="width:343.9000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">杭州市公共资源交易中心</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">监管部门</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=458 valign=top colspan=3 style="width:343.9000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">杭州市建设工程招标造价服务中心</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">招标联系人</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=180 valign=top style="width:135.5000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">王二</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=109 valign=top style="width:82.1500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">招标联系电话</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=168 valign=top style="width:126.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">13000003333</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">所属地区</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=180 valign=top style="width:135.5000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">市区</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=109 valign=top style="width:82.1500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">工程分类</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=168 valign=top style="width:126.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">房屋建筑</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">代理公司</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=458 valign=top colspan=3 style="width:343.9000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">杭州市公共资源交易中心投标单位测试五</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">代理联系人</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=180 valign=top style="width:135.5000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">25645</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=109 valign=top style="width:82.1500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">代理联系电话</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=168 valign=top style="width:126.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">13967899876</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=109 valign=top colspan=2 style="width:82.2000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">是否联合体投标</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=180 valign=top style="width:135.5000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">否</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=109 valign=top style="width:82.1500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=168 valign=top style="width:126.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:130%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p class=MsoNormal align=center style="text-align:center;">
+                    <b style="mso-bidi-font-weight:normal">
+                                        <span style="mso-spacerun:'yes';font-family:宋体;mso-ansi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                            <font face="宋体">工程概况</font>
+                                        </span>
+                    </b>
+                    <b style="mso-bidi-font-weight:normal">
+                                        <span style="mso-spacerun:'yes';font-family:宋体;mso-ansi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                            <o:p></o:p>
+                                        </span>
+                    </b>
+                </p>
+                <div align=center>
+                    <table class=MsoNormalTable border=1 cellspacing=0 style="border-collapse:collapse;width:100.0000%;mso-table-layout-alt:fixed;
+border:none;mso-border-left-alt:0.5000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);
+mso-border-right-alt:0.5000pt solid rgb(157,177,206);mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);mso-border-insideh:0.5000pt solid rgb(157,177,206);
+mso-border-insidev:0.5000pt solid rgb(157,177,206);mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;">
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">工程地点</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=459 valign=top colspan=3 style="width:344.4000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">杭州</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">法定代表人</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=175 valign=top style="width:131.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">王二</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=116 valign=top style="width:87.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">联系地址</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=167 valign=top style="width:125.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">测试地址</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">招标方式</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=175 valign=top style="width:131.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">公开招标</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=116 valign=top style="width:87.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">招标组织形式</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=167 valign=top style="width:125.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">委托招标</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">资格审查方式</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=459 valign=top colspan=3 style="width:344.4000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;color:rgb(255,0,0);
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">资格后审</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">投资总额</font>
+                                                        <font face="宋体">(万元)</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=175 valign=top style="width:131.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">111</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=116 valign=top style="width:87.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">本期概算</font>
+                                                        <font face="宋体">(万元)</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=167 valign=top style="width:125.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">12</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:9.8500pt;">
+                            <td width=108 valign=top style="width:81.7000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">备注</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=459 valign=top colspan=3 style="width:344.4000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(255,255,255);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">投标单位须完成市场主体注册入库。</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p class=MsoNormal align=center style="text-align:center;">
+                    <b style="mso-bidi-font-weight:normal">
+                                        <span style="mso-spacerun:'yes';font-family:宋体;mso-ansi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                            <font face="宋体">技术规模指标</font>
+                                        </span>
+                    </b>
+                    <b style="mso-bidi-font-weight:normal">
+                                        <span style="mso-spacerun:'yes';font-family:宋体;mso-ansi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                            <o:p></o:p>
+                                        </span>
+                    </b>
+                </p>
+                <div align=center>
+                    <table class=MsoNormalTable border=1 cellspacing=0 style="border-collapse:collapse;width:100.0000%;mso-table-layout-alt:fixed;
+border:none;mso-border-left-alt:0.5000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);
+mso-border-right-alt:0.5000pt solid rgb(157,177,206);mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);mso-border-insideh:0.5000pt solid rgb(157,177,206);
+mso-border-insidev:0.5000pt solid rgb(157,177,206);mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;">
+                        <tr style="height:19.8500pt;">
+                            <td width=149 valign=top style="width:111.7500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">指标项</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=245 valign=top style="width:184.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">值</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=173 valign=top style="width:130.1000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">指标单位</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=149 valign=top style="width:111.7500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=245 valign=top style="width:184.2500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=173 valign=top style="width:130.1000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal align=center style="text-align:center;line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p>&nbsp;</o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p class=MsoNormal align=center style="text-align:center;">
+                    <b style="mso-bidi-font-weight:normal">
+                                        <span style="mso-spacerun:'yes';font-family:宋体;mso-ansi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                            <font face="宋体">企业及从业人员资格要求</font>
+                                        </span>
+                    </b>
+                    <b style="mso-bidi-font-weight:normal">
+                                        <span style="mso-spacerun:'yes';font-family:宋体;mso-ansi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                            <o:p></o:p>
+                                        </span>
+                    </b>
+                </p>
+                <div align=center>
+                    <table class=MsoNormalTable border=1 cellspacing=0 style="border-collapse:collapse;width:100.0000%;mso-table-layout-alt:fixed;
+border:none;mso-border-left-alt:0.5000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);
+mso-border-right-alt:0.5000pt solid rgb(157,177,206);mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);mso-border-insideh:0.5000pt solid rgb(157,177,206);
+mso-border-insidev:0.5000pt solid rgb(157,177,206);mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;">
+                        <tr style="height:19.8500pt;">
+                            <td width=149 valign=top style="width:111.7500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">对投标人的承包资质要求</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=419 valign=top style="width:314.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:1.0000pt solid rgb(157,177,206);mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <span style="font-family:宋体;mso-spacerun:'yes';">&nbsp;</span>
+                                                        <font face="宋体">具备</font>
+                                                        <font face="宋体">施工总承包企业机电工程</font>
+                                                        <font face="宋体">
+                                                            (新) <span
+                                                                style="font-family:宋体;mso-spacerun:'yes';">&nbsp;</span>
+                                                            施工总承包企业机电工程(新) 二级
+                                                        </font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:19.8500pt;">
+                            <td width=149 valign=top style="width:111.7500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);background:rgb(230,240,253);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;mso-bidi-font-weight:bold;
+font-size:9.0000pt;mso-font-kerning:1.0000pt;">
+                                                        <font face="宋体">从业人员资格要求</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                            <td width=419 valign=top style="width:314.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid rgb(157,177,206);
+mso-border-left-alt:0.5000pt solid rgb(157,177,206);border-right:1.0000pt solid rgb(157,177,206);mso-border-right-alt:0.5000pt solid rgb(157,177,206);
+border-top:none;mso-border-top-alt:0.5000pt solid rgb(157,177,206);border-bottom:1.0000pt solid rgb(157,177,206);
+mso-border-bottom-alt:0.5000pt solid rgb(157,177,206);">
+                                <p class=MsoNormal style="line-height:150%;">
+                                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <span style="font-family:宋体;mso-spacerun:'yes';">&nbsp;</span>
+                                                        <font face="宋体">具备</font>
+                                                        <font face="宋体">通信与广电工程</font>
+                                                        <font face="宋体">二级</font>
+                                                    </span>
+                                    <span style="font-family:宋体;line-height:150%;font-size:9.0000pt;
+mso-font-kerning:1.0000pt;">
+                                                        <o:p></o:p>
+                                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p class=MsoNormal>
+                                    <span style="mso-spacerun:'yes';font-family:'Times New Roman';font-size:10.5000pt;
+mso-font-kerning:1.0000pt;">
+                                        <o:p>&nbsp;</o:p>
+                                    </span>
+                </p>
+            </div>
+            <!--EndFragment-->
+            </body>
+            </html>
+        </div>
+        <div style="border-top:1px dashed #d4d4d4;padding:8px 0;">
+            <div class="AfficheAccessory"
+                 style="font-weight:bold;font-size:14px;color:#2755a0;width:50%;margin-left:20px;font-family:微软雅黑,MS Serif, New York, serif;">
+                相关附件：
+            </div>
+            <ul style="font-size:14px;margin-left:50px;font-family:微软雅黑,MS Serif, New York, serif;">
+                <li style="line-height:30px;">
+                    <a title="" href="javascript:void(0);"
+                       onclick="DownLoad('施工资格后审招标文件示范文本', '20231117061516711189.pdf')">【施工资格后审招标文件示范文本】</a>
+                </li>
+                <li style="line-height:30px;">
+                    <a title="" href="javascript:void(0);"
+                       onclick="DownLoad('A3301010060CS5544001211(2)', '20231117061517ae9e9d.HzZbs')">【A3301010060CS5544001211(2)】</a>
+                </li>
+                <li style="line-height:30px;">
+                    <a title="" href="javascript:void(0);"
+                       onclick="DownLoad('招标公告（施工）20210410', '20231117061515eddeab.pdf')">【招标公告（施工）20210410】</a>
+                </li>
+                <li style="line-height:30px;">
+                    <a title="" href="javascript:void(0);"
+                       onclick="DownLoad('（线上）施工后审招标文件修订20210410', '2023111706151631ec2f.pdf')">【（线上）施工后审招标文件修订20210410】</a>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-bottom:50px;border-top:1px dashed #d4d4d4;border-bottom:1px dashed #d4d4d4;padding:8px 0;">
+            <div class="AfficheAccessory"
+                 style="font-weight:bold;font-size:14px;color:#2755a0;width:50%;margin-left:20px;font-family:微软雅黑,MS Serif, New York, serif;">
+                相关公告：
+            </div>
+            <ul style="font-size:14px;margin-left:50px;font-family:微软雅黑,MS Serif, New York, serif;">
+                <li style="line-height:30px;">
+                    <a title="这是一条测试数据-ZJL"
+                       href="/AfficheShow/Home?AfficheID=ac137e42-c173-4626-96f2-bb4699be3081&IsInner=0&ModuleID="
+                       target="_self">【核准信息公告】 这是一条测试数据-ZJL【2023-11-18】 </a>
+                </li>
+            </ul>
+        </div>
+        <div style="margin-left:20px;margin-bottom:10px;">
+            <a href="#" onclick="ShowComplaintPhone();"
+               style='color: rgb(39, 85, 160);font-size:12pt;text-decoration:none'>项目相关问题投诉</a>
+        </div>
+        <div id="ComplaintPhone"
+             style="display:none;text-align:center;line-height:20px;font-size:12pt;padding-top:10px;padding-left:10px;padding-right:10px;">
+            <label>本项目监管部门：</label>
+            杭州市建设工程招标造价服务中心
+            <br/>
+            <br/>
+            <label>投诉电话：</label>
+            暂无
+
+        </div>
+    </div>
+</div>
+<script>
+    //function DownLoad(name, url) {
+    //    var fileName = encodeURIComponent(name);
+    //    window.open("/AfficheShow/ObjectFileDownloadAction?FileDesc="+fileName+"&filepath="+url);
+    //}
+
+    function DownLoad(FileDesc, FilePath, DirType) {
+        if (DirType == null || DirType == undefined || DirType == "")
+            DirType = 3;
+        var downLoadUrl = "";
+        $.ajax({
+            type: "Post",
+            async: false,
+            url: "/AfficheShow/GetDownLoadUrl",
+            dataType: "text",
+            data: {
+                "FileDesc": FileDesc,
+                "FilePath": FilePath,
+                "DirType": DirType
+            },
+            success: function (data) {
+                downLoadUrl = data;
+            }
+        });
+        window.open(downLoadUrl);
+    }
+
+    function ComplaintChannel() {
+
+        //IsIsZbbTender 是否招标办项目
+        if ("" == "True") {
+
+            $("#PDFViewer").hide();
+            var ii = layer.confirm('如有疑问，请联系招标中心', {
+                btn: ['确定']//按钮
+            }, function () {
+                $("#PDFViewer").show();
+                layer.close(ii);
+            });
+
+        } else if ("" == "355") {
+            //355 :绿化项目     359:交通项目       360:水利项目
+            //layer.confirm("如有疑问，请联系绿管中心");
+            $("#PDFViewer").hide();
+            var jj = layer.confirm('如有疑问，请联系绿管中心', {
+                btn: ['确定']//按钮
+            }, function () {
+                $("#PDFViewer").show();
+                layer.close(jj);
+            });
+
+        } else {
+            var tenderID = "357FD3BE-C3AD-47C9-ADD1-CA5822C3566F";
+            window.open("/Complaint/Record?tenderID=" + tenderID);
+        }
+
+    }
+
+    function ShowComplaintPhone() {
+        if (IEVersion() != "-1") {
+            $("#PDFViewer").hide();
+        }
+
+        top.layer.open({
+            type: 1,
+            title: '监管信息',
+            content: $("#ComplaintPhone"),
+            shade: 0.3,
+            area: ['400px', '200px'],
+            btn: ['关闭'],
+            btnAlign: 'c',
+            yes: function (index, layero) {
+
+                if (IEVersion() != "-1") {
+                    $("#PDFViewer").show();
+                }
+
+                layer.close(index);
+            }
+
+        });
+    }
+
+    function IEVersion() {
+        var userAgent = navigator.userAgent;
+        //取得浏览器的userAgent字符串
+        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+        //判断是否IE<11浏览器
+        var isEdge = userAgent.indexOf("Edge") > -1 && !isIE;
+        //判断是否IE的Edge浏览器
+        var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+        if (isIE) {
+            var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+            reIE.test(userAgent);
+            var fIEVersion = parseFloat(RegExp["$1"]);
+            if (fIEVersion == 7) {
+                return 7;
+            } else if (fIEVersion == 8) {
+                return 8;
+            } else if (fIEVersion == 9) {
+                return 9;
+            } else if (fIEVersion == 10) {
+                return 10;
+            } else {
+                return 6;
+                //IE版本<=7
+            }
+        } else if (isEdge) {
+            return 'edge';
+            //edge
+        } else if (isIE11) {
+            return 11;
+            //IE11
+        } else {
+            return -1;
+            //不是ie浏览器
+        }
+    }
+</script>
+<div class="comWidth">
+    <div class="footer fl">
+        <div style="float:left; margin-top:80px;margin-left:80px;margin-top:80px;margin-left:80px;">
+            <script id="_jiucuo_" sitecode="3301000141" src="https://zfwzgl.www.gov.cn/exposure/jiucuo.js"></script>
+            <span id="_span_jiucuo"></span>
+        </div>
+        <div class="copyright">
+            <!--版权信息-->
+            <div>
+                <p>
+                    <a href="http://bszs.conac.cn/sitename?method=show&id=25E247E637F768BDE053022819ACEC99"
+                       target="_blank">
+                        <img src="/Images/Live/blue.png"/>
+                    </a>
+                </p>
+            </div>
+            <div class="wrap">
+                杭州市公共资源交易平台 版权所有 备案序号：<a target="_blank" href="https://beian.miit.gov.cn/#/Integrated/index"
+                                         style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">浙ICP备17018762号-2</a>
+                &nbsp;&nbsp;网站标识码：3301000141 &nbsp;&nbsp;<a target="_blank"
+                                                            href="https://hzctc.hangzhou.gov.cn/col/col1229533476/index.html"
+                                                            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">联系方式</a>
+                <a target="_blank" href="https://hzctc.hangzhou.gov.cn/col/col1229533518/index.html"
+                   style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">网站地图</a>
+                <br/>
+                主办单位：杭州市公共资源交易中心（杭州市政府采购中心、杭州市建设工程交易中心）
+                地址：上城区之江路925号（临江金座2号楼） 技术支持：杭州建易建设信息技术有限公司<br/>
+                最佳浏览效果：1024×768 以上分辨率，IE 10.0及以上版本
+                <br/>
+                服务电话：400-696-0866
+                <script type="text/javascript">
+                    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                    document.write(unescape("%3Cspan id='cnzz_stat_icon_5094733'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D5094733%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+                </script>
+                &nbsp;
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010202000051"
+                   style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                    <img src="/Css/images/wangjing.png" style="float:left;"/>
+                    <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备
+                        33010202000051号</p>
+                </a>
+            </div>
+            <!--版权信息结束-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    ////在页面增加一个放置图标的区块
+    //if (!document.getElementById('_span_jiucuo'))
+    //    document.write("<span id='_span_jiucuo'></span>");
+
+    ////点击图标
+    //function Link(site_code) {
+    //    //获取该站点需要纠错页面的url地址
+
+    //    var url = getCurrUrl();
+    //    url = decodeURIComponent(url);
+    //    url = decodeURIComponent(url);
+    //    url = decodeURIComponent(url);
+    //    url = encodeURIComponent(url).replace(/%257B/g, '%7B');
+    //    url = url.replace(/%257D/g, '%7D');
+    //    // var arr = url.split('?');
+    //    // var origin = encodeURIComponent(arr[0] + '?');
+    //    // url = arr.length > 1 ? origin + arr[1] : origin;
+    //    //跳转至纠错系统填写页面
+    //    window.open("https://zfwzgl.www.gov.cn/exposure/jiucuo.html?site_code=" + site_code + "&url=" + url);
+    //}
+    ////获取该站点需要纠错页面的url地址
+    //function getCurrUrl() {
+    //    var url = "";
+    //    if (parent !== window) {
+    //        try {
+    //            url = window.top.location.href;
+    //        } catch (e) {
+    //            url = window.top.document.referrer;
+    //        }
+    //    }
+    //    if (url.length == 0)
+    //        url = document.location.href;
+
+    //    return url;
+    //}
+</script>
+</body>
+</html>
