@@ -1,27 +1,45 @@
 package whf.easy.boot.service.htmlParse;
 
-import org.htmlcleaner.HtmlCleaner;
-import org.htmlcleaner.TagNode;
+import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Maps;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
+import whf.easy.boot.service.http.HttpClient;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class HtmlParseTest {
     public static void main(String[] args) throws IOException {
-        Document doc = Jsoup.connect("https://ggzy.hzctc.hangzhou.gov.cn/AfficheShow/Home?AfficheID=24c6fe2c-42fb-490b-b947-fb0e3724dc30&IsInner=0&IsHistory=0&ModuleID=22").get();
-        Elements table = doc.select("table");
-        int i = 0;
-        for (Element element : table) {
-            Elements select = element.select("tr").select("td");
-            for (Element element1 : select) {
-                System.out.println(i++ +"         "+ element1.text());
-            }
-
-        }
+        Map formData = Maps.newHashMap();
+        formData.put("area","");
+        formData.put("afficheType","22");
+        formData.put("IsToday","");
+        formData.put("title","1");
+        formData.put("proID","");
+        formData.put("number","");
+        formData.put("IsHistory","");
+        formData.put("TenderNo","");
+        formData.put("_search","false");
+        formData.put("nd","1700494104885");
+        formData.put("rows","10");
+        formData.put("page","2");
+        formData.put("sidx","PublishStartTime");
+        formData.put("sord","desc");
+        JSONObject jsonObject = HttpClient.doPostFormData("", formData);
+        System.out.println(jsonObject);
+//        Document doc = Jsoup.connect("").get();
+//        Elements table = doc.select("table");
+//        int i = 0;
+//        for (Element element : table) {
+//            Elements select = element.select("tr").select("td");
+//            for (Element element1 : select) {
+//                System.out.println(i++ +"         "+ element1.text());
+//            }
+//
+//        }
 //        for (int i = 0;i<=table.size();i++){
 //            Elements font = table.select("font");
 //            System.out.println(font.text());
